@@ -39,7 +39,11 @@ namespace DaySim {
 				.To<PersistenceFactory<IParkAndRideNode>>()
 				.InSingletonScope();
 
-			Bind<IPersistenceFactory<ITransitStopArea>>()
+            Bind<IPersistenceFactory<IDestinationParkingNode>>()
+                .To<PersistenceFactory<IDestinationParkingNode>>()
+                .InSingletonScope();
+
+            Bind<IPersistenceFactory<ITransitStopArea>>()
 				.To<PersistenceFactory<ITransitStopArea>>()
 				.InSingletonScope();
 
@@ -95,7 +99,11 @@ namespace DaySim {
 				.To<WrapperFactory<IParkAndRideNodeWrapper, IParkAndRideNodeCreator, IParkAndRideNode>>()
 				.InSingletonScope();
 
-			Bind<IWrapperFactory<ITransitStopAreaCreator>>()
+            Bind<IWrapperFactory<IDestinationParkingNodeCreator>>()
+                .To<WrapperFactory<IDestinationParkingNodeWrapper, IDestinationParkingNodeCreator, IDestinationParkingNode>>()
+                .InSingletonScope();
+
+            Bind<IWrapperFactory<ITransitStopAreaCreator>>()
 				.To<WrapperFactory<ITransitStopAreaWrapper, ITransitStopAreaCreator, ITransitStopArea>>()
 				.InSingletonScope();
 

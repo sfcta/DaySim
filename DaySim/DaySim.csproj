@@ -187,6 +187,9 @@
     <Compile Include="ChoiceModels\Default\Models\WorkTourTimeModel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DomainModels\Creators\DestinationParkingNodeCreator.cs" />
+    <Compile Include="DomainModels\Default\Models\DestinationParkingNode.cs" />
+    <Compile Include="DomainModels\Default\Wrappers\DestinationParkingNodeWrapper.cs" />
     <Compile Include="HTourDestinationModeTime.cs" />
     <Compile Include="HTourModeTime.cs">
       <SubType>Code</SubType>

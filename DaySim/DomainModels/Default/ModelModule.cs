@@ -31,7 +31,12 @@ namespace DaySim.DomainModels.Default {
 				.InSingletonScope()
 				.WithConstructorArgument("path", Global.WorkingParkAndRideNodePath);
 
-			Bind<Reader<TransitStopArea>>()
+            Bind<Reader<DestinationParkingNode>>()
+                .ToSelf()
+                .InSingletonScope()
+                .WithConstructorArgument("path", Global.WorkingDestinationParkingNodePath);
+
+            Bind<Reader<TransitStopArea>>()
 				.ToSelf()
 				.InSingletonScope()
 				.WithConstructorArgument("path", Global.WorkingTransitStopAreaPath);

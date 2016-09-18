@@ -114,8 +114,11 @@ namespace DaySim.Framework.Core {
 		public static bool ParkAndRideNodeIsEnabled {
 			get { return !string.IsNullOrEmpty(Configuration.RawParkAndRideNodePath) && !string.IsNullOrEmpty(Configuration.InputParkAndRideNodePath); }
 		}
+        public static bool DestinationParkingNodeIsEnabled  {
+            get { return !string.IsNullOrEmpty(Configuration.RawDestinationParkingNodePath) && !string.IsNullOrEmpty(Configuration.InputDestinationParkingNodePath); }
+        }
 
-		public static string DefaultInputParkAndRideNodePath {
+        public static string DefaultInputParkAndRideNodePath {
 			get { return GetWorkingSubpath("park_and_ride_node.tsv"); }
 		}
 
@@ -194,7 +197,11 @@ namespace DaySim.Framework.Core {
 			get { return GetWorkingPath("park_and_ride_node.bin"); }
 		}
 
-		public static string WorkingParcelNodePath {
+        public static string WorkingDestinationParkingNodePath {
+            get { return GetWorkingPath("destination_parking_node.bin"); }
+        }
+
+        public static string WorkingParcelNodePath {
 			get { return GetWorkingPath("parcel_node.bin"); }
 		}
 
