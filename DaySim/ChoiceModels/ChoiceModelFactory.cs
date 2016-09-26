@@ -250,8 +250,11 @@ namespace DaySim.ChoiceModels {
 
 		public static ParkAndRideNodeDao ParkAndRideNodeDao { get; private set; }
 
+        public static DestinationParkingNodeDao DestinationParkingNodeDao { get; private set; }
 
-		public static void Initialize(string name, int nBatches, bool loadData = true) {
+
+
+        public static void Initialize(string name, int nBatches, bool loadData = true) {
 			var helper = new FactoryHelper(Global.Configuration);
 
 			_type = helper.ChoiceModelRunner.GetChoiceModelRunnerType();

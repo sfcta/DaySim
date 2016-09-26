@@ -27,6 +27,8 @@ namespace DaySim.Framework.DomainModels.Wrappers {
 
 		void SetDestinationParkingShadowPricing(Dictionary<int, IDestinationParkingShadowPriceNode> destinationParkingShadowPrices);
 
-		#endregion
-	}
+        double SetDestinationParkingEffectivePrice(int minArrive, int minDepart, int destPurpose);
+
+        #endregion
+    }
 }

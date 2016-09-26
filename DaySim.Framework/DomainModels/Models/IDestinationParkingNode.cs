@@ -11,7 +11,7 @@ namespace DaySim.Framework.DomainModels.Models {
 
 		int NodeId { get; set; }
 
-        int Type { get; set; }
+        int ParkingType { get; set; }
 
         int MaxDuration { get; set; }
 

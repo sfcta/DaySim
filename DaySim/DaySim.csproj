@@ -195,6 +195,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ITransitStopArea.cs" />
+    <Compile Include="DestinationParkingDao.cs" />
+    <Compile Include="DestinationParkingShadowPricing\DestinationParkingShadowPriceCalculator.cs" />
+    <Compile Include="DestinationParkingShadowPricing\DestinationParkingShadowPriceNode.cs" />
+    <Compile Include="DestinationParkingShadowPricing\DestinationParkingShadowPriceReader.cs" />
+    <Compile Include="DestinationParkingShadowPricing\DestiinationParkingShadowPriceWriter.cs" />
     <Compile Include="PathTypeModels\PathTypeModel_override.cs" />
     <Compile Include="PathTypeModels\IPathTypeModel.cs" />
     <Compile Include="PathTypeModels\PathTypeModel.cs" />

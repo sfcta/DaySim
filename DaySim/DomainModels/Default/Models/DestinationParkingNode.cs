@@ -33,7 +33,7 @@ namespace DaySim.DomainModels.Default.Models {
 		public int NodeId { get; set; }
 
 		[ColumnName("TYPE")]
-		public int Type { get; set; }
+		public int ParkingType { get; set; }
 
 		[ColumnName("MAXDUR")]
 		public int MaxDuration { get; set; }

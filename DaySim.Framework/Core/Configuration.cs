@@ -1130,6 +1130,18 @@ namespace DaySim.Framework.Core
         public int ParkAndRideShadowPriceTimeSpread { get; set; }
 
         [XmlAttribute]
+        public double MaximumRatioDistanceFromParkVersusDistanceToDestination { get; set; }
+
+        [XmlAttribute]
+        public double MaximumXYDistanceToDestinationParking { get; set; }
+
+        [XmlAttribute]
+        public int FirstDistrictNumberForDestinationParkingChoice { get; set; }
+
+        [XmlAttribute]
+        public int LastDistrictNumberForDestinationParkingChoice { get; set; }
+
+        [XmlAttribute]
         public bool ShouldUseDestinationParkingShadowPricing { get; set; }
 
         [XmlAttribute]
