@@ -93,7 +93,7 @@ output <- function(out,outnum,wb,outsheet,celloc,xvals=0,yvals=0,transpose=0)
     if(transpose!=0)
       out <- data.frame(t(out))
 	}
-  regname <- paste("out",outnum,sep="")
+  regname <- paste("out_",outnum,sep="")
   createName(wb, name = regname, formula = paste(outsheet,"!",celloc,sep=""),overwrite=TRUE)
 	writeNamedRegion(wb, out, name = regname,header=F)
 }
@@ -132,7 +132,7 @@ my_loadworkbook <- function(outfilename) {
       stop(paste0("Workbook file '",original_excel_template,"' does not exist!"))
     }
   }
-  wb = loadWorkbook(workbook_name)
+  wb = XLConnect::loadWorkbook(workbook_name)
 }
 
 write_tables <- function(outfilename,datafile,templatefilename,outtype)
@@ -141,7 +141,7 @@ write_tables <- function(outfilename,datafile,templatefilename,outtype)
     wb = my_loadworkbook(outfilename)
     setStyleAction(wb,XLC$"STYLE_ACTION.NONE")
     tabulate_summaries(datafile,templatefile,outtype,wb) #TODO update function to work with data.tables
-    saveWorkbook(wb)
+    XLConnect::saveWorkbook(wb)
 }
 
 

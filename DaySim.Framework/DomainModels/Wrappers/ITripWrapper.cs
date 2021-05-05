@@ -5,150 +5,152 @@
 // distributed under a License for its use is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
+using System.Collections.Generic;
 using DaySim.Framework.Core;
 using DaySim.Framework.DomainModels.Models;
-using System.Collections.Generic;
 
 namespace DaySim.Framework.DomainModels.Wrappers {
-    public interface ITripWrapper : ITrip {
-        #region relations properties
+  public interface ITripWrapper : ITrip {
+    #region relations properties
 
-        IHouseholdWrapper Household { get; set; }
+    IHouseholdWrapper Household { get; set; }
 
-        IPersonWrapper Person { get; set; }
+    IPersonWrapper Person { get; set; }
 
-        IPersonDayWrapper PersonDay { get; set; }
+    IPersonDayWrapper PersonDay { get; set; }
 
-        ITourWrapper Tour { get; set; }
+    ITourWrapper Tour { get; set; }
 
-        IHalfTour HalfTour { get; set; }
+    IHalfTour HalfTour { get; set; }
 
-        IParcelWrapper OriginParcel { get; set; }
+    IParcelWrapper OriginParcel { get; set; }
 
-        IParcelWrapper DestinationParcel { get; set; }
+    IParcelWrapper DestinationParcel { get; set; }
 
-        #endregion
+    #endregion
 
-        #region flags/choice model/etc. properties
+    #region flags/choice model/etc. properties
 
-        int EarliestDepartureTime { get; set; }
+    int EarliestDepartureTime { get; set; }
 
-        int LatestDepartureTime { get; set; }
+    int LatestDepartureTime { get; set; }
 
-        int ArrivalTimeLimit { get; set; }
+    int ArrivalTimeLimit { get; set; }
 
-        int DestinationParkingNodeId { get; set; }
+    int DestinationParkingNodeId { get; set; }
 
-        int DestinationParkingType { get; set; }
+    int DestinationParkingType { get; set; }
 
-        double DestinationParkingCost { get; set; }
+    double DestinationParkingCost { get; set; }
 
-        double DestinationParkingWalkTime { get; set; }
+    double DestinationParkingWalkTime { get; set; }
 
-        bool IsHalfTourFromOrigin { get; set; }
+    bool IsHalfTourFromOrigin { get; set; }
 
-        bool IsToTourOrigin { get; set; }
+    bool IsToTourOrigin { get; set; }
 
-        bool IsMissingData { get; set; }
+    bool IsMissingData { get; set; }
 
-        #endregion
+    #endregion
 
-        #region wrapper methods
+    #region wrapper methods
 
-        bool IsNoneOrHomePurposeByOrigin();
+    bool IsNoneOrHomePurposeByOrigin();
 
-        bool IsWorkPurposeByOrigin();
+    bool IsWorkPurposeByOrigin();
 
-        bool IsEscortPurposeByOrigin();
+    bool IsEscortPurposeByOrigin();
 
-        bool IsNoneOrHomePurposeByDestination();
+    bool IsNoneOrHomePurposeByDestination();
 
-        bool IsWorkPurposeByDestination();
+    bool IsWorkPurposeByDestination();
 
-        bool IsEscortPurposeByDestination();
+    bool IsEscortPurposeByDestination();
 
-        bool IsWorkDestinationPurpose();
+    bool IsWorkDestinationPurpose();
 
-        bool IsSchoolDestinationPurpose();
+    bool IsSchoolDestinationPurpose();
 
-        bool IsEscortDestinationPurpose();
+    bool IsEscortDestinationPurpose();
 
-        bool IsPersonalBusinessDestinationPurpose();
+    bool IsPersonalBusinessDestinationPurpose();
 
-        bool IsShoppingDestinationPurpose();
+    bool IsShoppingDestinationPurpose();
 
-        bool IsMealDestinationPurpose();
+    bool IsMealDestinationPurpose();
 
-        bool IsSocialDestinationPurpose();
+    bool IsSocialDestinationPurpose();
 
-        bool IsRecreationDestinationPurpose();
+    bool IsRecreationDestinationPurpose();
 
-        bool IsMedicalDestinationPurpose();
+    bool IsMedicalDestinationPurpose();
 
-        bool IsPersonalBusinessOrMedicalDestinationPurpose();
+    bool IsPersonalBusinessOrMedicalDestinationPurpose();
 
-        bool IsWorkOrSchoolDestinationPurpose();
+    bool IsWorkOrSchoolDestinationPurpose();
 
-        bool IsPersonalReasonsDestinationPurpose();
+    bool IsPersonalReasonsDestinationPurpose();
 
-        bool IsSchoolOriginPurpose();
+    bool IsWorkOriginPurpose();
 
-        bool IsEscortOriginPurpose();
+    bool IsSchoolOriginPurpose();
 
-        bool IsShoppingOriginPurpose();
+    bool IsEscortOriginPurpose();
 
-        bool IsPersonalBusinessOriginPurpose();
+    bool IsShoppingOriginPurpose();
 
-        bool IsMealOriginPurpose();
+    bool IsPersonalBusinessOriginPurpose();
 
-        bool IsSocialOriginPurpose();
+    bool IsMealOriginPurpose();
 
-        bool UsesSovOrHovModes();
+    bool IsSocialOriginPurpose();
 
-        bool IsWalkMode();
+    bool UsesSovOrHovModes();
 
-        bool IsBikeMode();
+    bool IsWalkMode();
 
-        bool IsSovMode();
+    bool IsBikeMode();
 
-        bool IsHov2Mode();
+    bool IsSovMode();
 
-        bool IsHov3Mode();
+    bool IsHov2Mode();
 
-        bool IsTransitMode();
+    bool IsHov3Mode();
 
-        bool IsBeforeMandatoryDestination();
+    bool IsTransitMode();
 
-        ITripWrapper GetPreviousTrip();
+    bool IsBeforeMandatoryDestination();
 
-        ITripWrapper GetNextTrip();
+    ITripWrapper GetPreviousTrip();
 
-        int GetStartTime();
+    ITripWrapper GetNextTrip();
 
-        void SetDriverOrPassenger(List<ITripWrapper> trips);
+    int GetStartTime();
 
-        void UpdateTripValues();
+    void SetDriverOrPassenger(List<ITripWrapper> trips);
 
-        void HUpdateTripValues();
+    void UpdateTripValues();
 
-        void Invert(int sequence);
+    void HUpdateTripValues();
 
-        ITripModeImpedance[] GetTripModeImpedances();
+    void Invert(int sequence);
 
-        void SetActivityEndTime(int activityEndTime);
+    ITripModeImpedance[] GetTripModeImpedances();
 
-        void SetOriginAddressType(int originAddressType);
+    void SetActivityEndTime(int activityEndTime);
 
-        void SetTourSequence(int tourSequence);
+    void SetOriginAddressType(int originAddressType);
 
-        void SetTripValueOfTime();
+    void SetTourSequence(int tourSequence);
 
-        #endregion
+    void SetTripValueOfTime();
 
-        #region init/utility/export methods
+    #endregion
 
-        void Export();
+    #region init/utility/export methods
 
-        #endregion
-    }
+    void Export();
+
+    #endregion
+  }
 }

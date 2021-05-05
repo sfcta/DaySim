@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -20,6 +19,5 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3d0bf5c8-440a-417e-8856-fc7373f4d488")]
-
+[assembly: Guid("1AD0CB4A-7D13-4AA2-9FC2-B43DACA91F4C")]
 // All version information will be injected by GitVersion Task http://gitversion.readthedocs.io/

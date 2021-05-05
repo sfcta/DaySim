@@ -9,13 +9,28 @@ using DaySim.DomainModels.Actum.Models.Interfaces;
 using DaySim.Framework.DomainModels.Wrappers;
 
 namespace DaySim.DomainModels.Actum.Wrappers.Interfaces {
-    public interface IActumPersonDayWrapper : IPersonDayWrapper, IActumPersonDay {
-        int CreatedBusinessTours { get; set; }
+  public interface IActumPersonDayWrapper : IPersonDayWrapper, IActumPersonDay {
 
-        int SimulatedBusinessTours { get; set; }
+    #region relations properties
 
-        int SimulatedBusinessStops { get; set; }
+    //IActumHouseholdWrapper Household { get; set; }
 
-        bool SimulatedBusinessStopsExist();
-    }
+    //IActumPersonWrapper Person { get; set; }
+
+    //IActumHouseholdDayWrapper HouseholdDay { get; set; }
+
+    //List<IActumTourWrapper> Tours { get; set; }
+
+    #endregion
+
+
+
+    int CreatedBusinessTours { get; set; }
+
+    int SimulatedBusinessTours { get; set; }
+
+    int SimulatedBusinessStops { get; set; }
+
+    bool SimulatedBusinessStopsExist();
+  }
 }

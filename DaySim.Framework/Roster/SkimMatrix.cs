@@ -5,20 +5,21 @@
 // distributed under a License for its use is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
+
 namespace DaySim.Framework.Roster {
-    public sealed class SkimMatrix {
-        private readonly ushort[][] _skimMatrix;
-
-        public SkimMatrix(ushort[][] skimMatrix) {
-            _skimMatrix = skimMatrix;
-        }
-
-        public ushort GetValue(int origin, int destination) {
-            return _skimMatrix[origin][destination];
-        }
-
-        public bool IsEmpty() {
-            return _skimMatrix == null;
-        }
+  public sealed class SkimMatrix {
+    private readonly ushort[][] _skimMatrix;
+    public SkimMatrix(ushort[][] skimMatrix) {
+      _skimMatrix = skimMatrix;
     }
+
+    public ushort GetValue(int origin, int destination) {
+      ushort uValue = _skimMatrix[origin][destination];
+      return uValue;
+    }
+
+    public bool IsEmpty() {
+      return _skimMatrix == null;
+    }
+  }
 }

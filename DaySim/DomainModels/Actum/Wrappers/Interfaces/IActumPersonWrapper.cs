@@ -9,19 +9,8 @@ using DaySim.DomainModels.Actum.Models.Interfaces;
 using DaySim.Framework.DomainModels.Wrappers;
 
 namespace DaySim.DomainModels.Actum.Wrappers.Interfaces {
-    public interface IActumPersonWrapper : IPersonWrapper, IActumPerson {
-        bool BikeExists();
+  public interface IActumPersonWrapper : IPersonWrapper, IActumPerson {
 
-        bool DriversLicenseExists();
-
-        bool CarShareExists();
-
-        bool MCExists();
-
-        bool MopedExists();
-
-        bool WorkParkingExists();
-
-        bool SchoolParkingExists();
-    }
+    bool DriversLicenseExists();
+  }
 }

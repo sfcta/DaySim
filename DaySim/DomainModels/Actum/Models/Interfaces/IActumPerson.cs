@@ -8,29 +8,9 @@
 using DaySim.Framework.DomainModels.Models;
 
 namespace DaySim.DomainModels.Actum.Models.Interfaces {
-    public interface IActumPerson : IPerson {
-        int MainOccupation { get; set; }
+  public interface IActumPerson : IPerson {
 
-        int EducationLevel { get; set; }
+    int HasDriversLicense { get; set; }
 
-        int HasBike { get; set; }
-
-        int HasDriversLicense { get; set; }
-
-        int HasCarShare { get; set; }
-
-        int Income { get; set; }
-
-        int HasMC { get; set; }
-
-        int HasMoped { get; set; }
-
-        int HasWorkParking { get; set; }
-
-        int WorkHoursPerWeek { get; set; }
-
-        int FlexibleWorkHours { get; set; }
-
-        int HasSchoolParking { get; set; }
-    }
+  }
 }

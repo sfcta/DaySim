@@ -10,11 +10,11 @@ using DaySim.Framework.Core;
 using DaySim.Framework.Exceptions;
 
 namespace DaySim.Sampling {
-    public class SamplingWeightsSettings : ISamplingWeightsSettings {
+  public class SamplingWeightsSettings : ISamplingWeightsSettings {
 
-        public SamplingWeightsSettings() {
-            SizeFactors = new[]
-                    {
+    public SamplingWeightsSettings() {
+      SizeFactors = new[]
+              {
                         /*     EDU   food  GOV   IND   MED   OFC   RSC   RET   SVC EMPTOT  HOUSE  K8    UNI LUSE19 LU19Q OPENSP HighSchool*/
                         new[] {-30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -00D, -04D, -06D, -06D, -30D, -30D, -30D, -06D},  /* 0  7 :motorized WBTour or IntStop --work"             */
                         new[] {-03D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -07D, -06D, -02D, -02D, -30D, -30D, -30D, -02D},  /* 1  8 :motorized WBTour or IntStop --school"           */
@@ -41,7 +41,7 @@ namespace DaySim.Sampling {
                         new[] {-30D, -30D, -30D, -30D, -30D, -03D, -30D, -00D, -03D, -04D, -04D, -30D, -30D, -30D, -30D, -30D, -30D},  /*    22    29:walk --shop"                                    */
                         new[] {-30D, -00D, -30D, -30D, -30D, -03D, -30D, -02D, -03D, -04D, -03D, -30D, -30D, -30D, -30D, -30D, -30D},  /*    23    30:walk --meal"                                    */
                         new[] {-30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -02D, -01D, -03D, -03D, -30D, -30D, -01D, -03D},  /*    24    31:walk --social"                                  */
-                        new[] {-30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -02D, -04D, -04D, -04D, -02D, -30D, -03D, -04D},  /*    25    32:walk --rec"                                     */
+                        new[] {-30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -02D, -04D, -04D, -04D, -02D, -30D,  -03D, -04D},  /*    25    32:walk --rec"                                     */
                         new[] {-30D, -30D, -30D, -30D, -00D, -30D, -30D, -30D, -30D, -07D, -04D, -30D, -30D, -30D, -30D, -30D, -30D},  /*    26    33:walk --medical"                                 */
                         new[] {-30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -00D, -04D, -30D, -30D, -30D, -30D, -30D, -30D},  /*    27    34:bike --work"                                    */
                         new[] {-03D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -07D, -04D, -02D, -02D, -30D, -30D, -30D, -02D},  /* 28 35:bike --school"                                  */
@@ -50,14 +50,14 @@ namespace DaySim.Sampling {
                         new[] {-30D, -30D, -30D, -30D, -30D, -03D, -30D, -00D, -03D, -04D, -04D, -30D, -30D, -30D, -30D, -30D, -30D},  /*    31    38:bike --shop"                                    */
                         new[] {-30D, -00D, -30D, -30D, -30D, -03D, -30D, -02D, -03D, -04D, -03D, -30D, -30D, -30D, -30D, -30D, -30D},  /*    32    39:bike --meal"                                    */
                         new[] {-30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -02D, -01D, -03D, -03D, -30D, -30D, -01D, -03D},  /*    33    40:bike --social"                                  */
-                        new[] {-30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -02D, -04D, -04D, -04D, -02D, -30D, -03D, -04D},  /*    34    41:bike --rec"                                     */
+                        new[] {-30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -02D, -04D, -04D, -04D, -02D, -30D,  -03D, -04D},  /*    34    41:bike --rec"                                     */
                         new[] {-30D, -30D, -30D, -30D, -00D, -30D, -30D, -30D, -30D, -07D, -04D, -30D, -30D, -30D, -30D, -30D, -30D},  /*    35    42:bike --medical"                                 */
                         new[] {-02D, -30D, -30D, -30D, -30D, -02D, -30D, -30D, -02D, -02D, -01D, -30D, -00D, -30D, -30D, -30D, -03D}   /* 36   :ptypes 1-5 --usu school                         */
                         //new[] {-03D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -07D, -30D, -02D, -02D, -30D, -30D, -30D, -02D},    10    17:motorized HBTour --school"                        
                         //new[] {-04D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -30D, -00D, -30D, -30D, -30D, -30D}    36   :ptypes 1-5 --usu school                             
                     };
 
-            WeightFactors = new[] {
+      WeightFactors = new[] {
                 /*  0     7:motorized WBTour or IntStop --work"          */new[] {1455D}, //{1455}, /*values on the right are temporary values to synchronize with delphi for testing only*/
                 /*  1     8:motorized WBTour or IntStop --school"        */new[] {1111D}, //{1111},  
                 /*  2     9:motorized WBTour or IntStop --escort"        */new[] {1216D}, //{1216},  
@@ -96,300 +96,300 @@ namespace DaySim.Sampling {
                 /* 35    42:bike --medical"                              */new[] {700D}, //{1329}
                 /* 36      :ptypes 1-5 usual school"                     */new[] {1608D} //   
             };
-        }
-
-        #region size factors
-
-        public double[][] SizeFactors {
-            get; private set;
-        }
-
-        #endregion
-
-        #region weight factors
-
-        public double[][] WeightFactors { get; private set; }
-
-        #endregion
-
-        public int GetTourDestinationSegment(int purpose, int priority, int mode, int personType) {
-            if ((purpose == Global.Settings.Purposes.Work || purpose == Global.Settings.Purposes.Business) &&
-                priority == Global.Settings.TourPriorities.WorkBasedTour && mode >= Global.Settings.Modes.Sov) {
-                return 0;
-            }
-
-
-            if (purpose == Global.Settings.Purposes.School && priority == Global.Settings.TourPriorities.WorkBasedTour &&
-                mode >= Global.Settings.Modes.Sov) {
-                return 1;
-            }
-
-            if (purpose == Global.Settings.Purposes.Escort && priority == Global.Settings.TourPriorities.WorkBasedTour &&
-                mode >= Global.Settings.Modes.Sov) {
-                return 2;
-            }
-
-            if (purpose == Global.Settings.Purposes.PersonalBusiness && priority == Global.Settings.TourPriorities.WorkBasedTour &&
-                mode >= Global.Settings.Modes.Sov) {
-                return 3;
-            }
-
-            if (purpose == Global.Settings.Purposes.Shopping && priority == Global.Settings.TourPriorities.WorkBasedTour &&
-                mode >= Global.Settings.Modes.Sov) {
-                return 4;
-            }
-
-            if (purpose == Global.Settings.Purposes.Meal && priority == Global.Settings.TourPriorities.WorkBasedTour &&
-                mode >= Global.Settings.Modes.Sov) {
-                return 5;
-            }
-
-            if (purpose == Global.Settings.Purposes.Social && priority == Global.Settings.TourPriorities.WorkBasedTour &&
-                mode >= Global.Settings.Modes.Sov) {
-                return 6;
-            }
-
-            if (purpose == Global.Settings.Purposes.Recreation && priority == Global.Settings.TourPriorities.WorkBasedTour &&
-                mode >= Global.Settings.Modes.Sov) {
-                return 7;
-            }
-
-            if (purpose == Global.Settings.Purposes.Medical && priority == Global.Settings.TourPriorities.WorkBasedTour &&
-                mode >= Global.Settings.Modes.Sov) {
-                return 8;
-            }
-
-            if ((purpose == Global.Settings.Purposes.Work || purpose == Global.Settings.Purposes.Business) && mode >= Global.Settings.Modes.Sov) {
-                return 9;
-            }
-
-            if (purpose == Global.Settings.Purposes.School && mode >= Global.Settings.Modes.Sov &&
-                priority == Global.Settings.TourPriorities.UsualLocation && personType <= Global.Settings.PersonTypes.UniversityStudent) {
-                return 36;
-            }
-
-            if (purpose == Global.Settings.Purposes.School && mode >= Global.Settings.Modes.Sov) {
-                return 10;
-            }
-
-            if (purpose == Global.Settings.Purposes.Escort && mode >= Global.Settings.Modes.Sov) {
-                return 11;
-            }
-
-            if (purpose == Global.Settings.Purposes.PersonalBusiness && mode >= Global.Settings.Modes.Sov) {
-                return 12;
-            }
-
-            if (purpose == Global.Settings.Purposes.Shopping && mode >= Global.Settings.Modes.Sov) {
-                return 13;
-            }
-
-            if (purpose == Global.Settings.Purposes.Meal && mode >= Global.Settings.Modes.Sov) {
-                return 14;
-            }
-
-            if (purpose == Global.Settings.Purposes.Social && mode >= Global.Settings.Modes.Sov) {
-                return 15;
-            }
-
-            if (purpose == Global.Settings.Purposes.Recreation && mode >= Global.Settings.Modes.Sov) {
-                return 16;
-            }
-
-            if (purpose == Global.Settings.Purposes.Medical && mode >= Global.Settings.Modes.Sov) {
-                return 17;
-            }
-
-            if ((purpose == Global.Settings.Purposes.Work || purpose == Global.Settings.Purposes.Business) && mode == Global.Settings.Modes.Walk) {
-                return 18;
-            }
-
-            if (purpose == Global.Settings.Purposes.School && mode == Global.Settings.Modes.Walk) {
-                return 19;
-            }
-
-            if (purpose == Global.Settings.Purposes.Escort && mode == Global.Settings.Modes.Walk) {
-                return 20;
-            }
-
-            if (purpose == Global.Settings.Purposes.PersonalBusiness && mode == Global.Settings.Modes.Walk) {
-                return 21;
-            }
-
-            if (purpose == Global.Settings.Purposes.Shopping && mode == Global.Settings.Modes.Walk) {
-                return 22;
-            }
-
-            if (purpose == Global.Settings.Purposes.Meal && mode == Global.Settings.Modes.Walk) {
-                return 23;
-            }
-
-            if (purpose == Global.Settings.Purposes.Social && mode == Global.Settings.Modes.Walk) {
-                return 24;
-            }
-
-            if (purpose == Global.Settings.Purposes.Recreation && mode == Global.Settings.Modes.Walk) {
-                return 25;
-            }
-
-            if (purpose == Global.Settings.Purposes.Medical && mode == Global.Settings.Modes.Walk) {
-                return 26;
-            }
-
-            if ((purpose == Global.Settings.Purposes.Work || purpose == Global.Settings.Purposes.Business) && mode == Global.Settings.Modes.Bike) {
-                return 27;
-            }
-
-            if (purpose == Global.Settings.Purposes.School && mode == Global.Settings.Modes.Bike) {
-                return 28;
-            }
-
-            if (purpose == Global.Settings.Purposes.Escort && mode == Global.Settings.Modes.Bike) {
-                return 29;
-            }
-
-            if (purpose == Global.Settings.Purposes.PersonalBusiness && mode == Global.Settings.Modes.Bike) {
-                return 30;
-            }
-
-            if (purpose == Global.Settings.Purposes.Shopping && mode == Global.Settings.Modes.Bike) {
-                return 31;
-            }
-
-            if (purpose == Global.Settings.Purposes.Meal && mode == Global.Settings.Modes.Bike) {
-                return 32;
-            }
-
-            if (purpose == Global.Settings.Purposes.Social && mode == Global.Settings.Modes.Bike) {
-                return 33;
-            }
-
-            if (purpose == Global.Settings.Purposes.Recreation && mode == Global.Settings.Modes.Bike) {
-                return 34;
-            }
-
-            if (purpose == Global.Settings.Purposes.Medical && mode == Global.Settings.Modes.Bike) {
-                return 35;
-            }
-
-            if (purpose == Global.Settings.Purposes.Business && priority == Global.Settings.TourPriorities.WorkBasedTour &&
-                mode >= Global.Settings.Modes.Sov) {
-                return 0;
-            }
-
-            throw new SegmentRemainsUnassignedException();
-        }
-
-        public int GetIntermediateStopSegment(int purpose, int mode) {
-            if ((purpose == Global.Settings.Purposes.Work || purpose == Global.Settings.Purposes.Business) && mode >= Global.Settings.Modes.Sov) {
-                return 0;
-            }
-
-            if (purpose == Global.Settings.Purposes.School && mode >= Global.Settings.Modes.Sov) {
-                return 1;
-            }
-
-            if (purpose == Global.Settings.Purposes.Escort && mode >= Global.Settings.Modes.Sov) {
-                return 2;
-            }
-
-            if (purpose == Global.Settings.Purposes.PersonalBusiness && mode >= Global.Settings.Modes.Sov) {
-                return 3;
-            }
-
-            if (purpose == Global.Settings.Purposes.Shopping && mode >= Global.Settings.Modes.Sov) {
-                return 4;
-            }
-
-            if (purpose == Global.Settings.Purposes.Meal && mode >= Global.Settings.Modes.Sov) {
-                return 5;
-            }
-
-            if (purpose == Global.Settings.Purposes.Social && mode >= Global.Settings.Modes.Sov) {
-                return 6;
-            }
-
-            if (purpose == Global.Settings.Purposes.Recreation && mode >= Global.Settings.Modes.Sov) {
-                return 7;
-            }
-
-            if (purpose == Global.Settings.Purposes.Medical && mode >= Global.Settings.Modes.Sov) {
-                return 8;
-            }
-
-            if ((purpose == Global.Settings.Purposes.Work || purpose == Global.Settings.Purposes.Business) && mode == Global.Settings.Modes.Walk) {
-                return 18;
-            }
-
-            if (purpose == Global.Settings.Purposes.School && mode == Global.Settings.Modes.Walk) {
-                return 19;
-            }
-
-            if (purpose == Global.Settings.Purposes.Escort && mode == Global.Settings.Modes.Walk) {
-                return 20;
-            }
-
-            if (purpose == Global.Settings.Purposes.PersonalBusiness && mode == Global.Settings.Modes.Walk) {
-                return 21;
-            }
-
-            if (purpose == Global.Settings.Purposes.Shopping && mode == Global.Settings.Modes.Walk) {
-                return 22;
-            }
-
-            if (purpose == Global.Settings.Purposes.Meal && mode == Global.Settings.Modes.Walk) {
-                return 23;
-            }
-
-            if (purpose == Global.Settings.Purposes.Social && mode == Global.Settings.Modes.Walk) {
-                return 24;
-            }
-
-            if (purpose == Global.Settings.Purposes.Recreation && mode == Global.Settings.Modes.Walk) {
-                return 25;
-            }
-
-            if (purpose == Global.Settings.Purposes.Medical && mode == Global.Settings.Modes.Walk) {
-                return 26;
-            }
-
-            if ((purpose == Global.Settings.Purposes.Work || purpose == Global.Settings.Purposes.Business) && mode == Global.Settings.Modes.Bike) {
-                return 27;
-            }
-
-            if (purpose == Global.Settings.Purposes.School && mode == Global.Settings.Modes.Bike) {
-                return 28;
-            }
-
-            if (purpose == Global.Settings.Purposes.Escort && mode == Global.Settings.Modes.Bike) {
-                return 29;
-            }
-
-            if (purpose == Global.Settings.Purposes.PersonalBusiness && mode == Global.Settings.Modes.Bike) {
-                return 30;
-            }
-
-            if (purpose == Global.Settings.Purposes.Shopping && mode == Global.Settings.Modes.Bike) {
-                return 31;
-            }
-
-            if (purpose == Global.Settings.Purposes.Meal && mode == Global.Settings.Modes.Bike) {
-                return 32;
-            }
-
-            if (purpose == Global.Settings.Purposes.Social && mode == Global.Settings.Modes.Bike) {
-                return 33;
-            }
-
-            if (purpose == Global.Settings.Purposes.Recreation && mode == Global.Settings.Modes.Bike) {
-                return 34;
-            }
-
-            if (purpose == Global.Settings.Purposes.Medical && mode == Global.Settings.Modes.Bike) {
-                return 35;
-            }
-
-            throw new SegmentRemainsUnassignedException();
-        }
     }
+
+    #region size factors
+
+    public double[][] SizeFactors {
+      get; private set;
+    }
+
+    #endregion
+
+    #region weight factors
+
+    public double[][] WeightFactors { get; private set; }
+
+    #endregion
+
+    public int GetTourDestinationSegment(int purpose, int priority, int mode, int personType) {
+      if ((purpose == Global.Settings.Purposes.Work || purpose == Global.Settings.Purposes.Business) &&
+          priority == Global.Settings.TourPriorities.WorkBasedTour && mode >= Global.Settings.Modes.Sov) {
+        return 0;
+      }
+
+
+      if (purpose == Global.Settings.Purposes.School && priority == Global.Settings.TourPriorities.WorkBasedTour &&
+          mode >= Global.Settings.Modes.Sov) {
+        return 1;
+      }
+
+      if (purpose == Global.Settings.Purposes.Escort && priority == Global.Settings.TourPriorities.WorkBasedTour &&
+          mode >= Global.Settings.Modes.Sov) {
+        return 2;
+      }
+
+      if (purpose == Global.Settings.Purposes.PersonalBusiness && priority == Global.Settings.TourPriorities.WorkBasedTour &&
+          mode >= Global.Settings.Modes.Sov) {
+        return 3;
+      }
+
+      if (purpose == Global.Settings.Purposes.Shopping && priority == Global.Settings.TourPriorities.WorkBasedTour &&
+          mode >= Global.Settings.Modes.Sov) {
+        return 4;
+      }
+
+      if (purpose == Global.Settings.Purposes.Meal && priority == Global.Settings.TourPriorities.WorkBasedTour &&
+          mode >= Global.Settings.Modes.Sov) {
+        return 5;
+      }
+
+      if (purpose == Global.Settings.Purposes.Social && priority == Global.Settings.TourPriorities.WorkBasedTour &&
+          mode >= Global.Settings.Modes.Sov) {
+        return 6;
+      }
+
+      if (purpose == Global.Settings.Purposes.Recreation && priority == Global.Settings.TourPriorities.WorkBasedTour &&
+          mode >= Global.Settings.Modes.Sov) {
+        return 7;
+      }
+
+      if (purpose == Global.Settings.Purposes.Medical && priority == Global.Settings.TourPriorities.WorkBasedTour &&
+          mode >= Global.Settings.Modes.Sov) {
+        return 8;
+      }
+
+      if ((purpose == Global.Settings.Purposes.Work || purpose == Global.Settings.Purposes.Business) && mode >= Global.Settings.Modes.Sov) {
+        return 9;
+      }
+
+      if (purpose == Global.Settings.Purposes.School && mode >= Global.Settings.Modes.Sov &&
+          priority == Global.Settings.TourPriorities.UsualLocation && personType <= Global.Settings.PersonTypes.UniversityStudent) {
+        return 36;
+      }
+
+      if (purpose == Global.Settings.Purposes.School && mode >= Global.Settings.Modes.Sov) {
+        return 10;
+      }
+
+      if (purpose == Global.Settings.Purposes.Escort && mode >= Global.Settings.Modes.Sov) {
+        return 11;
+      }
+
+      if (purpose == Global.Settings.Purposes.PersonalBusiness && mode >= Global.Settings.Modes.Sov) {
+        return 12;
+      }
+
+      if (purpose == Global.Settings.Purposes.Shopping && mode >= Global.Settings.Modes.Sov) {
+        return 13;
+      }
+
+      if (purpose == Global.Settings.Purposes.Meal && mode >= Global.Settings.Modes.Sov) {
+        return 14;
+      }
+
+      if (purpose == Global.Settings.Purposes.Social && mode >= Global.Settings.Modes.Sov) {
+        return 15;
+      }
+
+      if (purpose == Global.Settings.Purposes.Recreation && mode >= Global.Settings.Modes.Sov) {
+        return 16;
+      }
+
+      if (purpose == Global.Settings.Purposes.Medical && mode >= Global.Settings.Modes.Sov) {
+        return 17;
+      }
+
+      if ((purpose == Global.Settings.Purposes.Work || purpose == Global.Settings.Purposes.Business) && mode == Global.Settings.Modes.Walk) {
+        return 18;
+      }
+
+      if (purpose == Global.Settings.Purposes.School && mode == Global.Settings.Modes.Walk) {
+        return 19;
+      }
+
+      if (purpose == Global.Settings.Purposes.Escort && mode == Global.Settings.Modes.Walk) {
+        return 20;
+      }
+
+      if (purpose == Global.Settings.Purposes.PersonalBusiness && mode == Global.Settings.Modes.Walk) {
+        return 21;
+      }
+
+      if (purpose == Global.Settings.Purposes.Shopping && mode == Global.Settings.Modes.Walk) {
+        return 22;
+      }
+
+      if (purpose == Global.Settings.Purposes.Meal && mode == Global.Settings.Modes.Walk) {
+        return 23;
+      }
+
+      if (purpose == Global.Settings.Purposes.Social && mode == Global.Settings.Modes.Walk) {
+        return 24;
+      }
+
+      if (purpose == Global.Settings.Purposes.Recreation && mode == Global.Settings.Modes.Walk) {
+        return 25;
+      }
+
+      if (purpose == Global.Settings.Purposes.Medical && mode == Global.Settings.Modes.Walk) {
+        return 26;
+      }
+
+      if ((purpose == Global.Settings.Purposes.Work || purpose == Global.Settings.Purposes.Business) && mode == Global.Settings.Modes.Bike) {
+        return 27;
+      }
+
+      if (purpose == Global.Settings.Purposes.School && mode == Global.Settings.Modes.Bike) {
+        return 28;
+      }
+
+      if (purpose == Global.Settings.Purposes.Escort && mode == Global.Settings.Modes.Bike) {
+        return 29;
+      }
+
+      if (purpose == Global.Settings.Purposes.PersonalBusiness && mode == Global.Settings.Modes.Bike) {
+        return 30;
+      }
+
+      if (purpose == Global.Settings.Purposes.Shopping && mode == Global.Settings.Modes.Bike) {
+        return 31;
+      }
+
+      if (purpose == Global.Settings.Purposes.Meal && mode == Global.Settings.Modes.Bike) {
+        return 32;
+      }
+
+      if (purpose == Global.Settings.Purposes.Social && mode == Global.Settings.Modes.Bike) {
+        return 33;
+      }
+
+      if (purpose == Global.Settings.Purposes.Recreation && mode == Global.Settings.Modes.Bike) {
+        return 34;
+      }
+
+      if (purpose == Global.Settings.Purposes.Medical && mode == Global.Settings.Modes.Bike) {
+        return 35;
+      }
+
+      if (purpose == Global.Settings.Purposes.Business && priority == Global.Settings.TourPriorities.WorkBasedTour &&
+          mode >= Global.Settings.Modes.Sov) {
+        return 0;
+      }
+
+      throw new SegmentRemainsUnassignedException();
+    }
+
+    public int GetIntermediateStopSegment(int purpose, int mode) {
+      if ((purpose == Global.Settings.Purposes.Work || purpose == Global.Settings.Purposes.Business) && mode >= Global.Settings.Modes.Sov) {
+        return 0;
+      }
+
+      if (purpose == Global.Settings.Purposes.School && mode >= Global.Settings.Modes.Sov) {
+        return 1;
+      }
+
+      if (purpose == Global.Settings.Purposes.Escort && mode >= Global.Settings.Modes.Sov) {
+        return 2;
+      }
+
+      if (purpose == Global.Settings.Purposes.PersonalBusiness && mode >= Global.Settings.Modes.Sov) {
+        return 3;
+      }
+
+      if (purpose == Global.Settings.Purposes.Shopping && mode >= Global.Settings.Modes.Sov) {
+        return 4;
+      }
+
+      if (purpose == Global.Settings.Purposes.Meal && mode >= Global.Settings.Modes.Sov) {
+        return 5;
+      }
+
+      if (purpose == Global.Settings.Purposes.Social && mode >= Global.Settings.Modes.Sov) {
+        return 6;
+      }
+
+      if (purpose == Global.Settings.Purposes.Recreation && mode >= Global.Settings.Modes.Sov) {
+        return 7;
+      }
+
+      if (purpose == Global.Settings.Purposes.Medical && mode >= Global.Settings.Modes.Sov) {
+        return 8;
+      }
+
+      if ((purpose == Global.Settings.Purposes.Work || purpose == Global.Settings.Purposes.Business) && mode == Global.Settings.Modes.Walk) {
+        return 18;
+      }
+
+      if (purpose == Global.Settings.Purposes.School && mode == Global.Settings.Modes.Walk) {
+        return 19;
+      }
+
+      if (purpose == Global.Settings.Purposes.Escort && mode == Global.Settings.Modes.Walk) {
+        return 20;
+      }
+
+      if (purpose == Global.Settings.Purposes.PersonalBusiness && mode == Global.Settings.Modes.Walk) {
+        return 21;
+      }
+
+      if (purpose == Global.Settings.Purposes.Shopping && mode == Global.Settings.Modes.Walk) {
+        return 22;
+      }
+
+      if (purpose == Global.Settings.Purposes.Meal && mode == Global.Settings.Modes.Walk) {
+        return 23;
+      }
+
+      if (purpose == Global.Settings.Purposes.Social && mode == Global.Settings.Modes.Walk) {
+        return 24;
+      }
+
+      if (purpose == Global.Settings.Purposes.Recreation && mode == Global.Settings.Modes.Walk) {
+        return 25;
+      }
+
+      if (purpose == Global.Settings.Purposes.Medical && mode == Global.Settings.Modes.Walk) {
+        return 26;
+      }
+
+      if ((purpose == Global.Settings.Purposes.Work || purpose == Global.Settings.Purposes.Business) && mode == Global.Settings.Modes.Bike) {
+        return 27;
+      }
+
+      if (purpose == Global.Settings.Purposes.School && mode == Global.Settings.Modes.Bike) {
+        return 28;
+      }
+
+      if (purpose == Global.Settings.Purposes.Escort && mode == Global.Settings.Modes.Bike) {
+        return 29;
+      }
+
+      if (purpose == Global.Settings.Purposes.PersonalBusiness && mode == Global.Settings.Modes.Bike) {
+        return 30;
+      }
+
+      if (purpose == Global.Settings.Purposes.Shopping && mode == Global.Settings.Modes.Bike) {
+        return 31;
+      }
+
+      if (purpose == Global.Settings.Purposes.Meal && mode == Global.Settings.Modes.Bike) {
+        return 32;
+      }
+
+      if (purpose == Global.Settings.Purposes.Social && mode == Global.Settings.Modes.Bike) {
+        return 33;
+      }
+
+      if (purpose == Global.Settings.Purposes.Recreation && mode == Global.Settings.Modes.Bike) {
+        return 34;
+      }
+
+      if (purpose == Global.Settings.Purposes.Medical && mode == Global.Settings.Modes.Bike) {
+        return 35;
+      }
+
+      throw new SegmentRemainsUnassignedException();
+    }
+  }
 }

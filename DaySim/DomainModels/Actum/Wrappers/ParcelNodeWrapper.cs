@@ -6,19 +6,19 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 using DaySim.DomainModels.Actum.Models.Interfaces;
-using DaySim.DomainModels.Actum.Wrappers.Interfaces;
 using DaySim.Framework.Core;
 using DaySim.Framework.DomainModels.Models;
+using DaySim.Framework.DomainModels.Wrappers;
 using DaySim.Framework.Factories;
 
 namespace DaySim.DomainModels.Actum.Wrappers {
-    [Factory(Factory.WrapperFactory, Category = Category.Wrapper, DataType = DataType.Actum)]
-    public class ParcelNodeWrapper : Default.Wrappers.ParcelNodeWrapper, IActumParcelNodeWrapper {
-        private readonly IActumParcelNode _parcelNode;
+  [Factory(Factory.WrapperFactory, Category = Category.Wrapper, DataType = DataType.Actum)]
+  public class ParcelNodeWrapper : Default.Wrappers.ParcelNodeWrapper, IParcelNodeWrapper {
+    private readonly IActumParcelNode _parcelNode;
 
-        [UsedImplicitly]
-        public ParcelNodeWrapper(IParcelNode parcelNode) : base(parcelNode) {
-            _parcelNode = (IActumParcelNode)parcelNode;
-        }
+    [UsedImplicitly]
+    public ParcelNodeWrapper(IParcelNode parcelNode) : base(parcelNode) {
+      _parcelNode = (IActumParcelNode)parcelNode;
     }
+  }
 }

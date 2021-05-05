@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\UtilPack.NuGet.MSBuild.2.8.0\build\UtilPack.NuGet.MSBuild.props" Condition="Exists('..\packages\UtilPack.NuGet.MSBuild.2.8.0\build\UtilPack.NuGet.MSBuild.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -11,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DaySim</RootNamespace>
     <AssemblyName>DaySim</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -55,7 +56,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>$(SolutionDir)DaySim_dist\</OutputPath>
-    <DefineConstants>CODE_ANALYSIS;RELEASE;</DefineConstants>
+    <DefineConstants>RELEASE;</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x64</PlatformTarget>
@@ -87,64 +88,58 @@
       <HintPath>..\packages\NDesk.Options.0.2.1\lib\NDesk.Options.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SimpleInjector, Version=3.2.7.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleInjector.3.2.7\lib\net45\SimpleInjector.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="SimpleInjector, Version=4.3.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.3.0\lib\net45\SimpleInjector.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AggregateLogsums\ActumAggregateLogsumsCalculatorCreator.cs" />
+    <Compile Include="AggregateLogsums\AggregateLogsumsCalculator_Actum.cs" />
+    <Compile Include="ChoiceModels\Actum\ChoiceModelRunner.cs" />
     <Compile Include="ChoiceModels\Actum\Models\AutoOwnershipModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\JointTourGenerationModel.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ChoiceModels\Actum\Models\TransitPassOwnershipModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\WorkLocationModel.cs" />
-    <Compile Include="ChoiceModels\H\Models\OtherHomeBasedTourModeTimeModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\PrimaryPriorityTimeModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\HouseholdDayPatternTypeModel.cs" />
-    <Compile Include="ChoiceModels\H\Models\SchoolTourModeTimeModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\TourDestinationModel.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ChoiceModels\Actum\Models\TourDestinationModeTimeModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\WorkAtHomeModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\MandatoryTourGenerationModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\WorkBasedSubtourGenerationModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\JointHalfTourGenerationModel.cs" />
     <Compile Include="ChoiceModels\Actum\Models\FullJointHalfTourParticipationModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\PersonDayPatternTypeModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\PartialJointHalfTourParticipationModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\PartialJointHalfTourChauffeurModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\JointTourParticipationModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\PersonDayPatternModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\PersonTourGenerationModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\MandatoryStopPresenceModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\WorkBasedSubtourModeTimeModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\WorkTourModeTimeModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\HouseholdDayPatternTypeModel.cs" />
     <Compile Include="ChoiceModels\Actum\Models\IntermediateStopGenerationModel.cs" />
     <Compile Include="ChoiceModels\Actum\Models\IntermediateStopLocationModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\JointHalfTourGenerationModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\JointTourGenerationModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\JointTourParticipationModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\MandatoryStopPresenceModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\MandatoryTourGenerationModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\OtherHomeBasedTourModeTimeModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\PartialJointHalfTourChauffeurModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\PartialJointHalfTourParticipationModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\PersonDayPatternModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\PersonDayPatternTypeModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\PersonTourGenerationModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\PrimaryPriorityTimeModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\PrimaryPriorityTimeScheduleModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\SchoolTourModeTimeModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\TourDestinationModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\TourDestinationModeTimeModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\TourModeTimeModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\TransitPassOwnershipModel.cs" />
     <Compile Include="ChoiceModels\Actum\Models\TripModeModel.cs" />
     <Compile Include="ChoiceModels\Actum\Models\TripTimeModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\PrimaryPriorityTimeScheduleModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\TourModeTimeModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\WorkAtHomeModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\WorkBasedSubtourGenerationModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\WorkBasedSubtourModeTimeModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\WorkLocationModel.cs" />
+    <Compile Include="ChoiceModels\Actum\Models\WorkTourModeTimeModel.cs" />
+    <Compile Include="ChoiceModels\H\Models\OtherHomeBasedTourModeTimeModel.cs" />
+    <Compile Include="ChoiceModels\H\Models\SchoolTourModeTimeModel.cs" />
     <Compile Include="ChoiceModels\Default\Models\AutoOwnershipModel.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ChoiceModels\H\Models\AggregateTourModeDestinationModel.cs" />
     <Compile Include="ChoiceModels\H\Models\AutoOwnershipModel.cs" />
     <Compile Include="ChoiceModels\H\Models\MandatoryStopPresenceModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\OtherHomeBasedTourModeTimeModel.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="ChoiceModels\H\Models\PayToParkAtWorkplaceModel.cs" />
     <Compile Include="ChoiceModels\H\Models\PersonTourGenerationModel.cs" />
     <Compile Include="ChoiceModels\H\Models\SchoolLocationModel.cs" />
-    <Compile Include="ChoiceModels\Actum\Models\SchoolTourModeTimeModel.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="ChoiceModels\H\Models\TransitPassOwnershipModel.cs" />
     <Compile Include="ChoiceModels\H\Models\TripTimeModel.cs">
       <SubType>Code</SubType>
@@ -192,38 +187,18 @@
     <Compile Include="ChoiceModels\Default\Models\WorkTourTimeModel.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DomainModels\Creators\DestinationParkingNodeCreator.cs" />
-    <Compile Include="DomainModels\Default\Models\DestinationParkingNode.cs" />
-    <Compile Include="DomainModels\Default\Wrappers\DestinationParkingNodeWrapper.cs" />
-    <Compile Include="DomainModels\Factories\ModuleFactory.cs" />
-    <Compile Include="DomainModels\Persisters\DestinationParkingNodePersister.cs" />
-    <Compile Include="HTourDestinationModeTime.cs" />
-    <Compile Include="HTourModeTime.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ITransitStopArea.cs" />
-    <Compile Include="DestinationParkingShadowPricing\DestinationParkingShadowPriceCalculator.cs" />
-    <Compile Include="DestinationParkingShadowPricing\DestinationParkingShadowPriceNode.cs" />
-    <Compile Include="DestinationParkingShadowPricing\DestinationParkingShadowPriceReader.cs" />
-    <Compile Include="DestinationParkingShadowPricing\DestinationParkingShadowPriceWriter.cs" />
-    <Compile Include="DestinationParkingDao.cs" />
-    <Compile Include="PathTypeModels\PathTypeModel_override.cs" />
-    <Compile Include="PathTypeModels\IPathTypeModel.cs" />
-    <Compile Include="PathTypeModels\PathTypeModel.cs" />
-    <Compile Include="PathTypeModels\PathTypeModelFactory.cs" />
-    <Compile Include="Sampling\SamplingWeightsSettings.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Sampling\SamplingWeightsSettingsSACOG.cs" />
-    <Compile Include="Settings\ActumSettings.cs" />
-    <Compile Include="Settings\HSettings.cs" />
     <Compile Include="DomainModels\Actum\ModelModule.cs" />
+    <Compile Include="DomainModels\Actum\Models\DestinationParkingNode.cs" />
     <Compile Include="DomainModels\Actum\Models\FullHalfTour.cs" />
+    <Compile Include="DomainModels\Actum\Models\Household.cs" />
+    <Compile Include="DomainModels\Actum\Models\HouseholdDay.cs" />
     <Compile Include="DomainModels\Actum\Models\Interfaces\IActumFullHalfTour.cs" />
     <Compile Include="DomainModels\Actum\Models\Interfaces\IActumHousehold.cs" />
     <Compile Include="DomainModels\Actum\Models\Interfaces\IActumHouseholdDay.cs" />
     <Compile Include="DomainModels\Actum\Models\Interfaces\IActumJointTour.cs" />
+    <Compile Include="DomainModels\Actum\Models\Interfaces\IActumParcel.cs" />
     <Compile Include="DomainModels\Actum\Models\Interfaces\IActumParcelNode.cs" />
+    <Compile Include="DomainModels\Actum\Models\Interfaces\IActumDestinationParkingNode.cs" />
     <Compile Include="DomainModels\Actum\Models\Interfaces\IActumParkAndRideNode.cs" />
     <Compile Include="DomainModels\Actum\Models\Interfaces\IActumPartialHalfTour.cs" />
     <Compile Include="DomainModels\Actum\Models\Interfaces\IActumPerson.cs" />
@@ -238,18 +213,24 @@
     <Compile Include="DomainModels\Actum\Models\ParcelNode.cs" />
     <Compile Include="DomainModels\Actum\Models\ParkAndRideNode.cs" />
     <Compile Include="DomainModels\Actum\Models\PartialHalfTour.cs" />
+    <Compile Include="DomainModels\Actum\Models\Person.cs" />
+    <Compile Include="DomainModels\Actum\Models\PersonDay.cs" />
     <Compile Include="DomainModels\Actum\Models\Subzone.cs" />
     <Compile Include="DomainModels\Actum\Models\Tour.cs" />
     <Compile Include="DomainModels\Actum\Models\TransitStopArea.cs" />
+    <Compile Include="DomainModels\Actum\Models\Trip.cs" />
     <Compile Include="DomainModels\Actum\Models\Zone.cs" />
+    <Compile Include="DomainModels\Actum\Wrappers\DestinationParkingNodeWrapper.cs" />
     <Compile Include="DomainModels\Actum\Wrappers\FullHalfTourWrapper.cs" />
+    <Compile Include="DomainModels\Actum\Wrappers\HouseholdDayWrapper.cs" />
+    <Compile Include="DomainModels\Actum\Wrappers\HouseholdWrapper.cs" />
     <Compile Include="DomainModels\Actum\Wrappers\Interfaces\IActumFullHalfTourWrapper.cs" />
     <Compile Include="DomainModels\Actum\Wrappers\Interfaces\IActumHouseholdDayWrapper.cs" />
     <Compile Include="DomainModels\Actum\Wrappers\Interfaces\IActumHouseholdWrapper.cs" />
     <Compile Include="DomainModels\Actum\Wrappers\Interfaces\IActumJointTourWrapper.cs" />
-    <Compile Include="DomainModels\Actum\Models\Interfaces\IActumParcel.cs" />
     <Compile Include="DomainModels\Actum\Wrappers\Interfaces\IActumParcelNodeWrapper.cs" />
     <Compile Include="DomainModels\Actum\Wrappers\Interfaces\IActumParcelWrapper.cs" />
+    <Compile Include="DomainModels\Actum\Wrappers\Interfaces\IActumDestinationParkingNodeWrapper.cs" />
     <Compile Include="DomainModels\Actum\Wrappers\Interfaces\IActumParkAndRideNodeWrapper.cs" />
     <Compile Include="DomainModels\Actum\Wrappers\Interfaces\IActumPartialHalfTourWrapper.cs" />
     <Compile Include="DomainModels\Actum\Wrappers\Interfaces\IActumPersonDayWrapper.cs" />
@@ -263,8 +244,40 @@
     <Compile Include="DomainModels\Actum\Wrappers\ParcelWrapper.cs" />
     <Compile Include="DomainModels\Actum\Wrappers\ParkAndRideNodeWrapper.cs" />
     <Compile Include="DomainModels\Actum\Wrappers\PartialHalfTourWrapper.cs" />
+    <Compile Include="DomainModels\Actum\Wrappers\PersonDayWrapper.cs" />
+    <Compile Include="DomainModels\Actum\Wrappers\PersonWrapper.cs" />
+    <Compile Include="DomainModels\Actum\Wrappers\TourWrapper.cs" />
     <Compile Include="DomainModels\Actum\Wrappers\TransitStopAreaWrapper.cs" />
+    <Compile Include="DomainModels\Actum\Wrappers\TripWrapper.cs" />
     <Compile Include="DomainModels\Actum\Wrappers\ZoneWrapper.cs" />
+    <Compile Include="DomainModels\Creators\DestinationParkingNodeCreator.cs" />
+    <Compile Include="DomainModels\Default\Models\DestinationParkingNode.cs" />
+    <Compile Include="DomainModels\Default\Wrappers\DestinationParkingNodeWrapper.cs" />
+    <Compile Include="DomainModels\Factories\ModuleFactory.cs" />
+    <Compile Include="DomainModels\Persisters\DestinationParkingNodePersister.cs" />
+    <Compile Include="ChoiceModels\H\HTourDestinationModeTime.cs" />
+    <Compile Include="ChoiceModels\H\HTourModeTime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ITransitStopArea.cs" />
+    <Compile Include="DestinationParkingShadowPricing\DestinationParkingShadowPriceCalculator.cs" />
+    <Compile Include="DestinationParkingShadowPricing\DestinationParkingShadowPriceNode.cs" />
+    <Compile Include="DestinationParkingShadowPricing\DestinationParkingShadowPriceReader.cs" />
+    <Compile Include="DestinationParkingShadowPricing\DestinationParkingShadowPriceWriter.cs" />
+    <Compile Include="DestinationParkingDao.cs" />
+    <Compile Include="PathTypeModels\PathTypeModel_Actum.cs" />
+    <Compile Include="PathTypeModels\PathTypeModel_override.cs" />
+    <Compile Include="PathTypeModels\IPathTypeModel.cs" />
+    <Compile Include="PathTypeModels\PathTypeModel.cs" />
+    <Compile Include="PathTypeModels\PathTypeModelFactory.cs" />
+    <Compile Include="Sampling\SamplingWeightsSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sampling\SamplingWeightsSettingsSACOG.cs" />
+    <Compile Include="Sampling\SamplingWeightsSettingsSimple.cs" />
+    <Compile Include="Sampling\SamplingWeightsSettingsUpdate.cs" />
+    <Compile Include="Settings\ActumSettings.cs" />
+    <Compile Include="Settings\HSettings.cs" />
     <Compile Include="DomainModels\Creators\FullHalfTourCreator.cs" />
     <Compile Include="DomainModels\Creators\HouseholdCreator.cs" />
     <Compile Include="DomainModels\Creators\HouseholdDayCreator.cs" />
@@ -305,24 +318,13 @@
     <Compile Include="AggregateLogsums\AggregateLogsumsCalculatorFactory.cs" />
     <Compile Include="AggregateLogsums\OtherAggregateLogsumsCalculatorCreator.cs" />
     <Compile Include="DomainModels\Default\Models\TransitStopArea.cs" />
-    <Compile Include="DomainModels\Actum\Wrappers\HouseholdDayWrapper.cs" />
-    <Compile Include="DomainModels\Actum\Models\Household.cs" />
-    <Compile Include="DomainModels\Actum\Models\HouseholdDay.cs" />
-    <Compile Include="DomainModels\Actum\Wrappers\HouseholdWrapper.cs" />
-    <Compile Include="DomainModels\Actum\Models\Person.cs" />
-    <Compile Include="DomainModels\Actum\Models\PersonDay.cs" />
-    <Compile Include="DomainModels\Actum\Wrappers\PersonDayWrapper.cs" />
-    <Compile Include="DomainModels\Actum\Wrappers\PersonWrapper.cs" />
-    <Compile Include="DomainModels\Actum\Wrappers\TourWrapper.cs" />
-    <Compile Include="DomainModels\Actum\Models\Trip.cs" />
-    <Compile Include="DomainModels\Actum\Wrappers\TripWrapper.cs" />
     <Compile Include="DomainModels\Persisters\HouseholdDayPersister.cs" />
     <Compile Include="DomainModels\Default\Models\ParcelNode.cs" />
     <Compile Include="DomainModels\Persisters\PersonDayPersister.cs" />
     <Compile Include="DomainModels\Persisters\TourPersister.cs" />
     <Compile Include="DomainModels\Persisters\HouseholdPersister.cs" />
     <Compile Include="FlagUtility.cs" />
-    <Compile Include="HTripTime.cs" />
+    <Compile Include="ChoiceModels\H\HTripTime.cs" />
     <Compile Include="AggregateLogsums\IAggregateLogsumsCalculator.cs" />
     <Compile Include="AggregateLogsums\IAggregateLogsumsCalculatorCreator.cs" />
     <Compile Include="InputTester.cs" />
@@ -330,7 +332,6 @@
     <Compile Include="ITripMapper.cs" />
     <Compile Include="ITripSelector.cs" />
     <Compile Include="ITripSkimWriter.cs" />
-    <Compile Include="ChoiceModels\Actum\ChoiceModelRunner.cs" />
     <Compile Include="ChoiceModels\ChoiceModelFactory.cs" />
     <Compile Include="ChoiceModels\ChoiceModelUtility.cs" />
     <Compile Include="ChoiceModels\Default\Models\EscortTourModeModel.cs" />
@@ -395,7 +396,6 @@
     <Compile Include="Sampling\SamplingWeightsSettingsFactory.cs" />
     <Compile Include="DomainModels\Default\Models\Zone.cs" />
     <Compile Include="Sampling\SamplingWeightsExporter.cs" />
-    <Compile Include="Sampling\SamplingWeightsSettingsSimple.cs" />
     <Compile Include="ShadowPricing\ShadowPriceCalculator.cs" />
     <Compile Include="ShadowPricing\ShadowPriceParcel.cs" />
     <Compile Include="ShadowPricing\ShadowPriceReader.cs" />
@@ -464,10 +464,11 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\GitVersionTask.4.0.0-beta0007\build\dotnet\GitVersionTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitVersionTask.4.0.0-beta0007\build\dotnet\GitVersionTask.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\GitVersionTask.4.0.0-beta0014\build\GitVersionTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitVersionTask.4.0.0-beta0014\build\GitVersionTask.targets'))" />
+    <Error Condition="!Exists('..\packages\UtilPack.NuGet.MSBuild.2.8.0\build\UtilPack.NuGet.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UtilPack.NuGet.MSBuild.2.8.0\build\UtilPack.NuGet.MSBuild.props'))" />
   </Target>
-  <Import Project="..\packages\GitVersionTask.4.0.0-beta0007\build\dotnet\GitVersionTask.targets" Condition="Exists('..\packages\GitVersionTask.4.0.0-beta0007\build\dotnet\GitVersionTask.targets')" />
+  <Import Project="..\packages\GitVersionTask.4.0.0-beta0014\build\GitVersionTask.targets" Condition="Exists('..\packages\GitVersionTask.4.0.0-beta0014\build\GitVersionTask.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

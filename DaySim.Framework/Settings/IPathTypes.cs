@@ -6,57 +6,74 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 namespace DaySim.Framework.Settings {
-    public interface IPathTypes {
-        int TotalPathTypes { get; }
+  public interface IPathTypes {
+    int TotalPathTypes { get; }
 
-        int None { get; }
+    int None { get; }
 
-        int FullNetwork { get; }
+    int FullNetwork { get; }
 
-        int NoTolls { get; }
+    int NoTolls { get; }
 
-        int LocalBus { get; }
+    int LocalBus { get; }
 
-        int LightRail { get; }
+    int LightRail { get; }
 
-        int PremiumBus { get; }
+    int PremiumBus { get; }
 
-        int CommuterRail { get; }
+    int CommuterRail { get; }
 
-        int Ferry { get; }
+    int Ferry { get; }
 
-        int NewMode { get; }
+    int TransitType1 { get; }
 
-        int Brt { get; }
+    int TransitType2 { get; }
 
-        int FixedGuideway { get; }
+    int TransitType3 { get; }
 
-        int BrtC2 { get; }
+    int TransitType4 { get; }
 
-        int FixedGuidewayC2 { get; }
+    int TransitType5 { get; }
 
-        int LocalBusPnr { get; }
+    int LocalBus_Knr { get; }
 
-        int NewModePnr { get; }
+    int LightRail_Knr { get; }
 
-        int BrtPnr { get; }
+    int PremiumBus_Knr { get; }
 
-        int FixedGuidewayPnr { get; }
+    int CommuterRail_Knr { get; }
 
-        int BrtC2Pnr { get; }
+    int Ferry_Knr { get; }
 
-        int FixedGuidewayC2Pnr { get; }
+    int TransitType1_Knr { get; }
 
-        int LocalBusKnr { get; }
+    int TransitType2_Knr { get; }
 
-        int NewModeKnr { get; }
+    int TransitType3_Knr { get; }
 
-        int BrtKnr { get; }
+    int TransitType4_Knr { get; }
 
-        int FixedGuidewayKnr { get; }
+    int TransitType5_Knr { get; }
 
-        int BrtC2Knr { get; }
+    int LocalBus_TNC { get; }
 
-        int FixedGuidewayC2Knr { get; }
-    }
+    int LightRail_TNC { get; }
+
+    int PremiumBus_TNC { get; }
+
+    int CommuterRail_TNC { get; }
+
+    int Ferry_TNC { get; }
+
+    int TransitType1_TNC { get; }
+
+    int TransitType2_TNC { get; }
+
+    int TransitType3_TNC { get; }
+
+    int TransitType4_TNC { get; }
+
+    int TransitType5_TNC { get; }
+
+  }
 }
